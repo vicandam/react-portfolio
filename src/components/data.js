@@ -77,3 +77,30 @@ export const projects = [
       "https://cms.recordedfuture.com/uploads/platform_threats_phishing_75e06a3d2f.jpg?w=1920",
   },
 ];
+
+export const stack = [
+  {
+    id: 1,
+    title: "html",
+  },
+  {
+    id: 2,
+    title: "css",
+  },
+  {
+    id: 3,
+    title: "javascript",
+  },
+  {
+    id: 4,
+    title: "react.js",
+  },
+  {
+    id: 5,
+    title: "node.js",
+  },
+  {
+    id: 6,
+    title: "gatsby.js",
+  },
+];

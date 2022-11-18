@@ -8,10 +8,15 @@ const Experience = () => {
   const [value, setValue] = useState(0);
 
   const fetchJobs = async () => {
-    const response = await fetch(url);
-    const newJobs = await response.json();
-    setJobs(newJobs);
-    setLoading(false);
+    try {
+      const response = await fetch(url);
+      const newJobs = await response.json();
+      setJobs(newJobs);
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
@@ -25,6 +30,7 @@ const Experience = () => {
       </section>
     );
   }
+
   const { company, dates, duties, title } = jobs[value];
   return (
     <section className="section">

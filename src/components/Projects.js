@@ -3,10 +3,6 @@ import Title from "./Title";
 import Project from "./Project";
 import { Link } from "react-router-dom";
 const Projects = ({ projects, title, showLink }) => {
-  // console.log(projects);
-  projects.map((project) => {
-    console.log(project.img);
-  });
   return (
     <section className="section projects">
       <Title title={title} />

@@ -1,47 +1,48 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Title from "../components/Title"
-import Seo from "../components/Seo"
-
-const About = ({ data }) => {
-  const {
-    strapiAbout: { title, image, info, stack },
-  } = data
+import React from "react";
+import Title from "../components/Title";
+import { stack } from "../components/data";
+import { Footer } from "../components";
+const About = () => {
   return (
     <>
-      <Seo title="About" />
-      <section className="about-page">
-        <div className="section-center about-center">
-          <img src={image.publicURL} alt={title} className="about-img-svg" />
-          <article className="about-text">
-            <Title title={title} />
-            <p>{info}</p>
-            <div className="about-stack">
-              {stack.map(item => {
-                return <span key={item.id}>{item.title}</span>
-              })}
-            </div>
-          </article>
-        </div>
-      </section>
+      <main>
+        <section className="about-page">
+          <div className="section-center about-center">
+            <img
+              src="https://gatsby-strapi-portfolio-project.netlify.app/static/7f6c6bd3fbb2b7fb0973fdf4a19cb784/9ee99c0535b015b9ef3ddea80ecb761d.svg"
+              alt="portfolio"
+              className="about-img-svg"
+            />
+
+            <article className="about-text">
+              <Title title={"about me"} />
+              <p>
+                Salvia tousled chambray, shoreditch retro cliche dreamcatcher
+                coloring book roof party keffiyeh small batch pork belly
+                actually mlkshk shaman. Stumptown typewriter you probably
+                haven't heard of them pork belly dreamcatcher umami woke,
+                chambray snackwave craft beer. You probably haven't heard of
+                them slow-carb trust fund thundercats bespoke live-edge forage
+                echo park artisan coloring book. Semiotics af tumblr, health
+                goth viral iPhone cold-pressed ugh kogi fanny pack. Photo booth
+                3 wolf moon narwhal, marfa lumbersexual taiyaki biodiesel cloud
+                bread slow-carb enamel pin stumptown taxidermy food truck 8-bit
+                mustache. Pickled next level vaporware, brooklyn af sriracha
+                hoodie try-hard flannel slow-carb raw denim.
+              </p>
+              <div className="about-stack">
+                {stack.map((item) => {
+                  return <span key={item.id}>{item.title}</span>;
+                })}
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <Footer />
+      </main>
     </>
-  )
-}
+  );
+};
 
-export const query = graphql`
-  {
-    strapiAbout {
-      title
-      info
-      stack {
-        id
-        title
-      }
-      image {
-        publicURL
-      }
-    }
-  }
-`
-
-export default About
+export default About;
